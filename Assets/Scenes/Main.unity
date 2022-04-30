@@ -918,7 +918,7 @@ AudioSource:
   m_Volume: 0.2
   m_Pitch: 0.9
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -3159,7 +3159,7 @@ GameObject:
   - component: {fileID: 1568016216}
   - component: {fileID: 1568016215}
   m_Layer: 0
-  m_Name: Kmyt
+  m_Name: Main Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3183,14 +3183,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568016214}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.580572, y: -35.02787, z: 43.4}
+  m_LocalRotation: {x: -0.046988882, y: 0.9197686, z: -0.11344119, w: 0.3727586}
+  m_LocalPosition: {x: -152.24094, y: -35.02787, z: 133.70695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6147635847844660654}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 135, z: -10}
 --- !u!1 &1568713025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,7 +3298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581450110}
   m_LocalRotation: {x: -0, y: -0, z: 0.1416115, w: 0.98992234}
-  m_LocalPosition: {x: 760.2594, y: 231.38995, z: 319.62048}
+  m_LocalPosition: {x: 760.5, y: 231.1, z: 40.9}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 181033372}
@@ -3380,7 +3380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609016020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.59, y: -19.91, z: 579.4698}
+  m_LocalPosition: {x: -28.59, y: -19.91, z: 597.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1768379153}
@@ -4522,7 +4522,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 80cfcc725069ef74598a13e894e8e799, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -6005,7 +6005,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781042904032698132}
-  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -50.819427, y: -29.136566, z: 75.9}
   m_LocalScale: {x: 0.050000004, y: 0.049999997, z: 0.050000004}
   m_Children:
@@ -6015,7 +6015,7 @@ Transform:
   - {fileID: 416468054651710093}
   m_Father: {fileID: 1568016216}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6155474335687657768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,7 +6197,7 @@ GameObject:
   - component: {fileID: 6781042904032698134}
   - component: {fileID: 6781042904032698136}
   m_Layer: 0
-  m_Name: Breathing Idle
+  m_Name: Kmyt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6247,8 +6247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2882ececca9fd14d89656afc2b038b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  turnSpeed: 30
 --- !u!4 &6810413477735384795
 Transform:
   m_ObjectHideFlags: 0
