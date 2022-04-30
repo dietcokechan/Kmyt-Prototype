@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject optionsObject;
+    private void Start()
+    {
+        optionsObject.SetActive(false);
+    }
     // Loading main scene from main menu
     public void StartGame()
     {
