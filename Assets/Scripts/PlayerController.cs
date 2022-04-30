@@ -4,27 +4,60 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 30f;
-    public float turnSpeed = 30f;
+    // Variables
+    [SerializeField] private float speed = 20f;
+
     private float horizontalInput;
     private float verticalInput;
 
+    // References
     private Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
+        Move();
+    }
+
+    void Move()
+    {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        // Direction in 2D space for movement
+        Vector3 directionTwo = new Vector3(horizontalInput, verticalInput, 0);
 
-        anim.SetFloat("Vertical", verticalInput);
-        anim.SetFloat("Horizontal", horizontalInput);
+        // Direction in 3D space for rotation
+        Vector3 directionThree = new Vector3(horizontalInput, 0, verticalInput);
+
+        // If player is moving in 2D space rotate the player in 3D space
+        if (directionTwo != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(directionThree);
+            Walk();
+        }
+        else
+        {
+            Idle();
+        }
+
+        // Move the player
+        transform.Translate(directionTwo * Time.deltaTime * speed, Space.World);
+    }
+
+    void Idle()
+    {
+        // Idle Animtion
+        anim.SetFloat("Speed", 0);
+    }
+
+    void Walk()
+    {
+        // Walk Animtion
+        anim.SetFloat("Speed", 1);
     }
 }
