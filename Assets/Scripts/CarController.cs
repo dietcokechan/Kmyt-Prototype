@@ -16,8 +16,6 @@ public class CarController : MonoBehaviour
     void Update()
     {
         direction = Input.GetAxisRaw("Horizontal");
-        
-
     }
     private void FixedUpdate()
     {
