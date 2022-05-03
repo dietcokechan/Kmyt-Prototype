@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject optionsObject;
-    private void Start()
+    
+    void Start()
     {
         optionsObject.SetActive(false);
     }
+
     // Loading main scene from main menu
     public void StartGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main Scene");
     }
 
     // Exiting game
