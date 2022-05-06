@@ -21,15 +21,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-
-        if (horizontalInput > 0.1 || verticalInput > 0.1)
-        {
-            if (!audioSrc.isPlaying)
-            {
-                audioSrc.clip = footsteps;
-                audioSrc.Play();
-            }
-        }
     }
 
     void Move()
@@ -48,6 +39,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(directionThree);
             Walk();
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.clip = footsteps;
+                audioSrc.Play();
+            }
         }
         else
         {
@@ -68,5 +64,11 @@ public class PlayerController : MonoBehaviour
     {
         // Walk Animtion
         anim.SetFloat("Speed", 1);
+    }
+
+    void Stop()
+    {
+        verticalInput = 0;
+        horizontalInput = 0;
     }
 }
