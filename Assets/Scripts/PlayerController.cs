@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Variables
     [SerializeField] private float speed;
-
     private float horizontalInput;
     private float verticalInput;
 
-    // References
     private Animator anim;
+    public AudioSource audioSrc;
+    public AudioClip footsteps;
 
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         Move();
+
+        if (horizontalInput > 0.1 || verticalInput > 0.1)
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.clip = footsteps;
+                audioSrc.Play();
+            }
+        }
     }
 
     void Move()
