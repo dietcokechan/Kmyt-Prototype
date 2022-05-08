@@ -11,9 +11,9 @@ TagManager:
   - Post-Processing
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Walls
+  - Decorations
   - 
   - 
   - 
@@ -38,9 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Ground
+    uniqueID: 2703367047
+    locked: 0
+  - name: Water
+    uniqueID: 4269293777
+    locked: 0
+  - name: Decorations
+    uniqueID: 2101579631
+    locked: 0
+  - name: Walls
+    uniqueID: 3603660021
+    locked: 0
+  - name: NPCs
+    uniqueID: 1327634689
+    locked: 0
+  - name: Player
+    uniqueID: 1680684785
     locked: 0
   - name: UI
     uniqueID: 526715999
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
