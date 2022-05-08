@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 1165090752}
   - component: {fileID: 1165090751}
   - component: {fileID: 1165090754}
+  - component: {fileID: 1165090756}
   - component: {fileID: 1165090755}
   m_Layer: 0
   m_Name: Car2
@@ -385,7 +386,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d443b06265b17d54ba7ab744793b8a8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -425,27 +426,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
---- !u!50 &1165090755
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &1165090755
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165090750}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &1165090756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165090750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.4703455, y: 3.6790931, z: 0.2}
+  m_Center: {x: -0.13733244, y: 0.017912984, z: 0}
 --- !u!1 &1224964724
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +599,7 @@ GameObject:
   - component: {fileID: 1968045280}
   - component: {fileID: 1968045279}
   - component: {fileID: 1968045282}
+  - component: {fileID: 1968045284}
   - component: {fileID: 1968045283}
   m_Layer: 0
   m_Name: Car1
@@ -678,7 +688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968045278}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -10.05, y: 5.42, z: 10}
+  m_LocalPosition: {x: -6.84, y: 5.42, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -697,28 +707,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb78df36bf4ee848b7a507c8e26d768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
---- !u!50 &1968045283
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &1968045283
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968045278}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
   m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &1968045284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968045278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5181136, y: 3.6671515, z: 0.2}
+  m_Center: {x: -0.20898414, y: 0, z: 0}
 --- !u!1 &1109361240028267
 GameObject:
   m_ObjectHideFlags: 0
@@ -24129,32 +24146,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864268372059708781}
   m_Mesh: {fileID: 5060444177187149915, guid: bca94bfe12754eb4cb70cb714d880064, type: 3}
---- !u!61 &2682805128504936563
-BoxCollider2D:
+--- !u!65 &2682805128504936563
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864268372059708781}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 19.999998}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.99999994, y: 19.999998, z: 0.21000004}
+  m_Center: {x: 0, y: 0, z: -3.6559231}
 --- !u!23 &2685722984451237581
 MeshRenderer:
   m_ObjectHideFlags: 0
