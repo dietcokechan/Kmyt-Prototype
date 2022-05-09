@@ -23,14 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!canMove)
-        {
-            Stop();
-        }
-        else
-        {
-            Move();
-        }
+        Move();
     }
 
     void Move()
@@ -65,7 +58,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move the player
-        transform.Translate(directionTwo * Time.deltaTime * speed, Space.World);
+        rb.velocity = directionTwo * speed;
     }
 
     void Idle()
@@ -82,15 +75,12 @@ public class PlayerController : MonoBehaviour
 
     void Stop()
     {
-        canMove = false;
         rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if(canMove)
-        {
-            Stop();
-        }
+        Stop();
     }
 }
