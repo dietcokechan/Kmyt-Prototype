@@ -5,8 +5,21 @@ using UnityEngine;
 public class CarAI : MonoBehaviour
 {
     private float speed = 2;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+       rb.velocity = Vector3.left * speed * Time.deltaTime;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
