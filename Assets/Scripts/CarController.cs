@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float moveSpeed = 1.0f;
+    // VARIABLES
+    private float speed = 1;
     private float direction;
-    
+
+    // COMPONENTS
+    private Rigidbody rb;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         direction = Input.GetAxisRaw("Horizontal");
+
+        rb.velocity = new Vector3(direction * Time.fixedTime * speed, 0, 0);
     }
-    private void FixedUpdate()
+
+    // Stop moving upon hitting colliders
+    void OnCollisionEnter(Collision collision)
     {
-        rb.velocity = Vector2.zero;
-        rb.velocity = new Vector2(direction * Time.fixedTime * moveSpeed, 0);
+        rb.velocity = Vector3.zero;
     }
 }

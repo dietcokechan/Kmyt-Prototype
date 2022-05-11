@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CarAI : MonoBehaviour
 {
+    // VARIABLES
     private float speed = 2;
+
+    // COMPONENTS
     private Rigidbody rb;
 
     void Start()
@@ -14,12 +17,12 @@ public class CarAI : MonoBehaviour
 
     void Update()
     {
-       rb.velocity = Vector3.left * speed * Time.deltaTime;
+        rb.velocity = Vector3.right * speed;
     }
 
+    // Stop moving upon hitting colliders
     void OnCollisionEnter(Collision collision)
     {
         rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
     }
 }
