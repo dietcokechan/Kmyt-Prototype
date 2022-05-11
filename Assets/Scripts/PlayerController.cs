@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // VARIABLES
     [SerializeField] private float speed;
     [SerializeField] private float horizontalInput;
     [SerializeField] private float verticalInput;
-    public bool canMove = true;
 
+    // COMPONENTS
     private Animator anim;
     private AudioSource audioSrc;
     private AudioClip footsteps;
@@ -21,15 +22,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Move();
     }
 
     void Move()
     {
-        canMove = true;
-
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
@@ -46,11 +45,12 @@ public class PlayerController : MonoBehaviour
 
             Walk();
 
-            if (!audioSrc.isPlaying)
-            {
-                audioSrc.clip = footsteps;
-                audioSrc.Play();
-            }
+            // if (!audioSrc.isPlaying)
+            // {
+            //     // Play footsteps
+            //     audioSrc.clip = footsteps;
+            //     audioSrc.Play();
+            // }
         }
         else
         {
@@ -63,13 +63,13 @@ public class PlayerController : MonoBehaviour
 
     void Idle()
     {
-        // Idle Animtion
+        // Play idle animation
         anim.SetFloat("Speed", 0);
     }
 
     void Walk()
     {
-        // Walk Animtion
+        // Play walk animation
         anim.SetFloat("Speed", 1);
     }
 
@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
     }
 
+    // Stop moving when the player is touching a collider
     void OnCollisionEnter(Collision collision)
     {
         Stop();
