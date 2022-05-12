@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    // Go to pause menu scene
     public void PauseMenu()
     {
         SceneManager.LoadScene("Pause");
