@@ -6,7 +6,12 @@ public class OathHandler : MonoBehaviour
 {
     public bool oathRead;
 
-    void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        oathRead = false;
+    }
+
+    void OnTriggerStay(Collider other)
     {
         oathRead = true;
     }

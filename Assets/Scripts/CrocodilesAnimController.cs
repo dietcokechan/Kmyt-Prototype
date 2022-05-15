@@ -7,7 +7,6 @@ public class CrocodilesAnimController : MonoBehaviour
     //VARIABLES
     private bool canAttack = true;
     private bool playerNear;
-    private bool oathRead;
 
     //COMPONENTS
     private Animator anim;
@@ -16,22 +15,19 @@ public class CrocodilesAnimController : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        oathHandler = GetComponent<OathHandler>();
-        oathRead = oathHandler.oathRead;
+        anim = GetComponentInChildren<Animator>();
+        oathHandler = tree.GetComponentInChildren<OathHandler>();
     }
 
     void Update()
     {
-        if(!playerNear)
-        {
-            Idle();
-        }
+        Idle();
+
         if(canAttack && playerNear)
         {
             Attack();
         }
-        else if(oathRead)
+        if(!canAttack && playerNear)
         {
             BackToIdle();
         }
@@ -52,15 +48,16 @@ public class CrocodilesAnimController : MonoBehaviour
         anim.SetFloat("Move", 0);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         playerNear = true;
 
-        if(!oathRead)
+        if(!oathHandler.oathRead)
         {
             canAttack = true;
         }
-        else if(oathRead)
+
+        if(oathHandler.oathRead)
         {
             canAttack = false;
         }
