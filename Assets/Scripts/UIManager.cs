@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject optionsObject;
+    public GameObject raceObject;
+    public GameObject dialogue;
     
     void Start()
     {
@@ -16,6 +18,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Main Scene");
+        Destroy(dialogue);
     }
 
     // Exiting game
@@ -28,11 +31,20 @@ public class UIManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
+        Destroy(dialogue);
     }
 
-    // Go to pause menu scene
-    public void PauseMenu()
+    // Load race scene but as an additive scene instead of loading it
+    public void LoadRace()
     {
-        SceneManager.LoadScene("Pause");
+        SceneManager.LoadScene("Race", LoadSceneMode.Additive);
+        Destroy(dialogue);
+    }
+
+    // Destroy the additive scene by destroying the parent object
+    public void DestroyRace()
+    {
+        Destroy(raceObject);
+        Destroy(dialogue);
     }
 }
