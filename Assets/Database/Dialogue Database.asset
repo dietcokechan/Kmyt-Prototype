@@ -1027,9 +1027,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Continue();
-
-          LoadLevel(Race);'
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1052,7 +1050,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 21.87912
-        y: 243.73627
+        y: 244.83517
         width: 160
         height: 30
     - id: 4
@@ -1434,7 +1432,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 30
+        y: 29
         width: 160
         height: 30
     - id: 1
@@ -1442,7 +1440,7 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Pictures
         value: '[]'
         type: 3
@@ -1450,9 +1448,9 @@ MonoBehaviour:
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
-        value: 4
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -1462,16 +1460,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: You won the race! Here, you can have this car to play with. Come back
           whenever and we play together again.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Parenthetical
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Audio Files
         value: '[]'
         type: 3
@@ -1479,13 +1477,17 @@ MonoBehaviour:
       - title: Video File
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 'SetContinueMode(true);
 
-          LoadLevel(Main Menu);'
+          LoadLevel(Main Scene);'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -1502,7 +1504,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 20
-        y: 80
+        y: 81
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
