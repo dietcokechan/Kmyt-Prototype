@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     // VARIABLES
-    private float speed = 1;
+    private float speed = 1.1f;
     private float direction;
 
     // COMPONENTS
@@ -20,7 +20,7 @@ public class CarController : MonoBehaviour
     {
         direction = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector3(direction * Time.fixedTime * speed, 0, 0);
+        rb.velocity = new Vector3(direction * speed * Time.fixedTime, 0, 0);
     }
 
     // Stop moving upon hitting colliders
