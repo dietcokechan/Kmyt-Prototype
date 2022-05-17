@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Race.unity
     guid: 99b4654fa9935ec49b224639df0b6c7b
-  - enabled: 1
-    path: Assets/Scenes/Pause.unity
-    guid: c5719be68da4a3946aa0b920d0ca5680
   m_configObjects: {}
