@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject dialogue;
+
     void Start()
     {
         gameObject.SetActive(false);
@@ -18,5 +20,10 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         gameObject.SetActive(false);
+    }
+
+    public void DeleteDialogue()
+    {
+        Destroy(dialogue);
     }
 }
