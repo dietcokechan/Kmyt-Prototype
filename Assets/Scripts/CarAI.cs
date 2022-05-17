@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarAI : MonoBehaviour
 {
     // VARIABLES
-    private float speed = 1;
+    private float speed = 12f;
 
     // COMPONENTS
     private Rigidbody rb;
@@ -18,7 +18,7 @@ public class CarAI : MonoBehaviour
     void Update()
     {
         // Moves automatically
-        rb.velocity = Vector3.right * speed * Time.fixedTime;
+        rb.velocity = Vector3.right * speed;
     }
 
     // Stop moving upon hitting colliders
