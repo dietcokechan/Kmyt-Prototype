@@ -1,2 +1,2 @@
 # Kmyt-Prototype
-An educational RPG game demo developed for university
+An educational adventure game demo developed for university
