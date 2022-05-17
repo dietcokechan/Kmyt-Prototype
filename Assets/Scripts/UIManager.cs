@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Main Scene");
-        Destroy(dialogue);
     }
 
     // Exiting game
@@ -45,6 +44,5 @@ public class UIManager : MonoBehaviour
     public void DestroyRace()
     {
         Destroy(raceObject);
-        Destroy(dialogue);
     }
 }
